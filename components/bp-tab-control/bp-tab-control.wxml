@@ -1,0 +1,8 @@
+<view class="list d-flex relative">
+  <block wx:for="{{list}}" wx:key="index">
+    <view class="item flex-1 text-center {{currentIndex == index ? 'active' : ''}}"
+      bindtap="onSwitchTab" data-index="{{index}}"
+    >{{item}}</view>
+  </block>
+  <bp-notify showNotify="{{showNotify}}"></bp-notify>
+</view>

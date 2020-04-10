@@ -1,0 +1,32 @@
+.comment-wrap .comment-num {
+  line-height: 80rpx;
+}
+.comment-list .comment-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.item-right, .reply-right {
+  margin-left: 20rpx;
+}
+.item-content-wrap, .reply-content-wrap {
+  margin: 15rpx 0;
+  color: #666;
+  word-break: break-all;
+}
+.reply-wrap {
+  padding: 5rpx 20rpx;
+  margin-top: 20rpx;
+  background: #f7f7f7;
+}
+.reply-item {
+  padding: 15rpx 0;
+}
+.reply-wrap .more {  /*收起、展开*/
+  padding-left: 80rpx;
+  line-height: 44rpx;
+  color: #4f95f0;
+}
+.comment-wrap .more-btn { /* 更多评论 */
+  line-height: 80rpx;
+  color: #4f95f0;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bp-recomment-item": "/components/bp-recomment-item/bp-recomment-item"
+  },
+  "navigationBarTitleText": "TA的荐币",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,165 @@
+.detail-data {
+  position: relative;
+  top: -32rpx;
+  padding: 24rpx 40rpx 50rpx 40rpx;
+  border-radius: 40rpx 40rpx 0 0;
+  background: #fff;
+}
+.detail-data .detail-data-top {
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.detail-data .detail-data-top .detail-title  {
+  font-size: 32rpx;
+  margin-top: 30rpx;
+  font-weight: 500;
+}
+.detail-data .detail-data-top .detail-text {
+  padding: 18rpx 0 0 0;
+  color: #666;
+}
+.detail-data .status {
+  position: absolute;
+  top: 28rpx;
+  right: 0;
+  padding: 10rpx 32rpx;
+  border-radius: 96rpx 0 0 96rpx;
+}
+.detail-data .status.text-muted {
+  background: rgba(238,238,238);
+}
+.detail-data .status.end {
+  padding: 10rpx 20rpx;
+}
+.detail-data .status .iconfont {
+  margin-right: 10rpx;
+}
+.detail-data .img-list {
+  margin-top: 20rpx;
+}
+.detail-data .img-list .img-item {
+  width: 210rpx;
+  height: 210rpx;
+  margin-right: 12rpx;
+  margin-bottom: 12rpx;
+  border-radius: 6rpx;
+}
+.detail-data .detail-data-bottom {
+  padding-top: 18rpx;
+}
+.detail-data .detail-data-bottom .bourse {
+  margin-bottom: 50rpx;
+}
+.detail-data .detail-data-bottom .bourse-icon {
+  width: 26rpx;
+  height: 28rpx;
+}
+.detail-data .detail-data-bottom .bourse-item {
+  padding: 0 12rpx;
+  margin-left: 10rpx;
+  border-radius: 6rpx;
+  border: 2rpx solid #FF8615;
+  font-size: 18rpx;
+}
+.detail-data .detail-data-bottom .sweet-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 8rpx;
+}
+.detail-data .detail-data-bottom .people {
+  margin-bottom: 10rpx;
+  color: #2E313B;
+}
+.detail-data .detail-data-bottom .sweet {
+  font-size: 32rpx;
+}
+.detail-data .detail-data-bottom .guarantee .lock-wrap {
+  position: relative;
+  width: 80rpx;
+  height: 100rpx; 
+ }
+.detail-data .detail-data-bottom .guarantee .lock-icon {
+  width: 80rpx;
+  height: 100rpx; 
+}
+.detail-data .detail-data-bottom .grarantee-icon {
+  position: absolute;
+  right: -17rpx;
+  bottom: 0;
+  width: 35rpx;
+  height: 38rpx;
+}
+.detail-data .detail-data-bottom .coin-name .name {
+  font-size: 48rpx;
+}
+.detail-data .detail-data-bottom .coin-name .desc-flag {
+  padding: 0 12rpx;
+  margin-left: 4rpx;
+  border-radius: 6rpx;
+  color: #fff;
+  background: #FFA812;
+}
+.detail-data .detail-data-bottom .rate-wrap {
+  padding: 0 20rpx;
+  margin: 60rpx 0;
+}
+.detail-data .detail-data-bottom .rate-wrap .rate-item {
+  margin-top: 24rpx;
+}
+.detail-data .detail-data-bottom .rate-wrap .rate-item .rate {
+  font-size: 36rpx;
+}
+.detail-data .detail-data-bottom .end-desc .end {
+  padding: 0 40rpx 20rpx 40rpx;
+  border-bottom: 2rpx dotted #ccc;
+}
+.detail-data .detail-data-bottom .arrow-icon {
+  position: relative;
+  top: 30rpx;
+  width: 60rpx;
+  height: 30rpx;
+}
+.detail-data .period, .detail-data .recommend-price, .detail-data .current-price {
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+.detail-data .progress-wrap .end-time {
+  margin-top: 12rpx;
+}
+.guarantee-price {
+  margin-top: 20rpx;
+  padding: 20rpx;
+  border: 1rpx solid #FFA000;
+  border-radius: 16rpx;
+}
+.guarantee-price .price-left {
+  padding-right: 40rpx;
+  margin-right: 40rpx;
+  border-right: 1rpx solid #FFA000;
+}
+.guarantee-price .price-left .sweet {
+  margin-bottom: 18rpx;
+}
+
+
+.cu-dialog {
+  width: 440rpx;
+}
+.cu-bar {
+  min-height: 70rpx;
+}
+.cu-bar .content {
+  width: auto;
+}
+.bourse-list .bourse-item {
+  padding: 4rpx 12rpx;
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 6rpx;
+  border: 2rpx solid #FF8615;
+  font-size: 28rpx;
+}
+.cu-dialog  .desc {
+  margin-top: 40rpx;
+  text-align: left;
+}

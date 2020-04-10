@@ -1,0 +1,15 @@
+<!-- <view class="follow-btn cancel font-small" 
+  wx:if="{{item1.isfans && !item1.ismine}}"
+  catchtap="onTakeAttention" data-type="{{item1.isfans}}"
+>取消关注</view>
+<view class="follow-btn follow font-small"
+  wx:if="{{!item1.isfans && !item1.ismine}}"
+  catchtap="onTakeAttention" data-type="{{item1.isfans}}"
+>
+  <text class="iconfont icon-add font-small"></text>关注
+</view> -->
+<!-- 删除icon -->
+<text class="iconfont icon-laji text-muted font-big" 
+  wx:if="{{item1.ismine}}"
+  catchtap="onDeleteActive" data-id="{{item1.id}}"
+></text>

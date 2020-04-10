@@ -1,0 +1,34 @@
+<scroll-view scroll-y class="indexes" scroll-into-view="indexes-{{listCurID}}"      style="height:calc(100vh)" scroll-with-animation="true" enable-back-to-top="true"
+bindscroll="onViewScroll"
+>
+  <block wx:for="{{list}}" wx:key="index" wx:if="{{list.length > 0}}">
+    <view class="padding left-letter-item content-bg indexItem-{{item.name}}" id="indexes-{{item.name}}" data-index="{{item.name}}">{{item.name}}</view>
+    <view class="cu-list menu-avatar no-padding">
+      <view class="cu-item" wx:for="{{item.list}}" 
+        wx:key="sub" wx:for-item="ite" wx:for-index="sub" 
+        bindtap="onChooseCountry" 
+        data-countryName="{{ite.countryName}}"
+        data-countryCode="{{ite.countryCode}}"
+        data-isoCode="{{ite.isoCode}}"
+      >
+        <view class="content d-flex align-items-center justify-content-between">
+          <view class="country-name">{{ite.countryName}}</view>
+          <view class="country-code">{{ite.isoCode}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+<view class="indexBar" style="height:calc(100vh)">
+  <view class="indexBar-box" bindtouchstart="tStart"
+    bindtouchend="tEnd"
+    catchtouchmove="tMove"
+  >
+    <view class="indexBar-item {{index == currentIndex ? 'active' : ''}}" 
+      wx:for="{{list}}" wx:key="index" id="{{index}}"       
+      bindtouchstart="getCur" bindtouchend="setCur"
+    >{{item.name}}</view>
+  </view>
+</view>
+<!-- 加载动画 -->
+<bp-loading wx:if="{{isShowLoadModal}}"></bp-loading>

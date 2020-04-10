@@ -1,0 +1,30 @@
+.comment-wrap1 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 112rpx;
+  padding: 0 20rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #fff;
+  box-shadow: 0px -1px 1px #eee;
+  box-sizing: content-box;
+  z-index: 10;
+}
+.comment-wrap1 .input-wrap {
+  height: 72rpx;
+  padding: 0 20rpx;
+  margin-right: 20rpx;
+  border-radius: 36rpx;
+  background: #eee;
+}
+.comment-wrap1 .input-wrap input {
+  height: 100%;
+}
+.comment-wrap1 .input-wrap .iconfont {
+  margin-right: 20rpx;
+  color: #999;
+}
+.comment-wrap1 .submit {
+  border-radius: 60rpx;
+}

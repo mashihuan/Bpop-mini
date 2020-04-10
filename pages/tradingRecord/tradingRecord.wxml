@@ -1,0 +1,20 @@
+<view class="balance">当前泡泡糖余额：{{balance}}</view>
+<view class="record-list">
+  <block wx:for="{{recordList}}" wx:key="index">
+    <view class="record-item d-flex align-items-center justify-content-between">
+      <view class="item-left">
+        <view class="title">{{item.content}}</view>
+        <view class="time text-muted font-small">{{item.addTime}}</view>
+      </view>
+      <view class="item-right {{item.pointChange >=0 ? 'green' : 'red'}}">
+        {{item.pointChange >=0 ? '+' : ''}}{{item.pointChange}}泡泡糖
+      </view>
+    </view>
+  </block>
+</view>
+
+
+
+
+<!-- 加载状态 -->
+<view class="cu-load {{loadStatus}}"></view>

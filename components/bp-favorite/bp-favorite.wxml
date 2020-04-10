@@ -1,0 +1,17 @@
+<view class="item-bottom-right d-flex align-items-center">
+  <block wx:if="{{showMessage}}">
+    <view class="item-reply text-muted font-small d-flex align-items-center {{showSkeleton ? 'skeleton-class' : ''}}"
+      catchtap="onComment"
+    >
+      <text class="iconfont icon-xiaoxi"></text>{{item.commonAccount}}
+    </view>
+  </block>
+  <view class="item-like text-muted font-small d-flex align-items-center {{item1.myFabulousAccount > 0 ? 'theme-color' : ''}} {{showSkeleton ? 'skeleton-class' : ''}}"
+    catchtap="onfavorite" data-commentId="{{item1.id}}"
+    data-type="{{item1.myFabulousAccount}}"
+  >
+    <text class="iconfont like icon-like1 theme-color animated heartBeat {{showSkeleton ? 'skeleton-class' : ''}}" wx:if="{{item1.myFabulousAccount > 0}}"></text>
+    <text class="iconfont like icon-like2 text-muted {{showSkeleton ? 'skeleton-class' : ''}}" wx:else></text>
+    {{item1.fabulousAccount}}
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view class="container">
+  <image class="download-img w-100" mode="widthFix" 
+    src="{{type == 'active' ? 'http://bpop.u-ico.com/file/wxmini/26.png' : 'http://bpop.u-ico.com/file/wxmini/25.png'}}"
+    bindload="onImgLoad"
+  ></image>
+  <button class="cu-btn" bindtap="onCopyEvent">点击复制链接</button>
+</view>

@@ -1,0 +1,68 @@
+<wxs src="../../utils/format.wxs" module="format" />
+
+<view class="recomment-item animated fadeInRight" bindtap="onGoToDetail" data-recommentId="{{item.id}}">
+  <view class="recomment-time font-small text-muted">
+    {{item.status == 1 ? format.activeTimeFormat(item.addtime) : (format.activeTimeFormat(item.addtime) +  ' - ' + format.activeTimeFormat(item.endTime))}}
+  </view>
+  <view class="recomment-content">
+    <block wx:if="{{item.status == 2}}">
+      <image wx:if="{{item.rate >= 0}}" class="plus-icon finished" src="/images/plus-icon.png"></image>
+      <image wx:if="{{item.rate < 0}}" class="minus-icon finished" src="/images/minus-icon.png"></image>
+    </block>
+    <view class="content-top d-flex justify-content-between align-items-center">
+      <view class="title ellipsis">{{item.title}}</view>
+      <view class="price d-flex align-items-center align-items-center theme-color">
+        <block wx:if="{{item.charge > 0}}">
+          <image class="sweet" src="/images/paopaotang.png"></image> x{{item.charge}}
+        </block>
+        <block wx:if="{{item.charge == 0}}">
+          免费
+        </block>
+      </view>
+    </view>
+    <view class="content-center d-flex align-items-center">
+      <view class="center-left">
+        <view class="lock-wrap d-flex">
+          <block wx:if="{{item.ischarge || item.charge == 0 || item.ismine || item.status == 2}}">
+            <view class="name font-bold">{{item.name}}</view>
+          </block>
+          <block wx:if="{{item.status == 1 && !item.ismine && item.charge != 0 & !item.ischarge}}">
+            <image class="lock-icon" src="/images/lock.png"></image>
+            <image wx:if="{{item.deposit >= 0}}" class="guarantee-icon" src="/images/baozhang.png"></image>
+          </block>
+        </view>
+      </view>
+      <view class="center-right flex-1">
+        <view class="rate-wrap d-flex align-items-center justify-content-between">
+          <view class="current-rate rate {{item.rate >=0 ? 'green' : 'red'}}"><text class=" font-bold">{{item.rate}}</text>%</view>
+          <image class="arrow-icon" src="/images/jiantou.png"></image>
+          <view class="expect-rate rate green"><text class=" font-bold">{{item.expectIncrease}}</text>%</view>
+        </view>
+        <view class="rate-desc d-flex align-items-center justify-content-between">
+          <view class="current-desc font-small text-muted">{{item.status == 1 ? '当前涨幅': '结束涨幅'}}</view>
+          <view class="expect-desc font-small text-muted">预期涨幅</view>
+        </view>
+      </view>
+    </view>
+    <view class="content-bottom d-flex align-items-center justify-content-between">
+      <block wx:if="{{item.exchange}}">
+        <view class="bourse d-flex align-items-center font-small text-muted">
+          <image class="bourse-icon" src="/images/jiaoyisuo.png"></image>
+          <block wx:for="{{format.strToArr(item.exchange)}}" wx:for-item="ite" wx:for-index="ind" wx:key="ind">
+            <text class="bourse-item">{{ite}}</text>
+          </block>
+        </view>
+      </block>
+      <block wx:if="{{item.deposit >= 0}}">
+        <view class="guarantee d-flex align-items-center font-small text-muted">
+          <image class="guarantee-icon" src="/images/baozhang.png"></image> 荐币保障计划
+        </view>
+      </block>
+      <block wx:if="{{item.deposit > 0}}">
+        <view class="guarantee-money d-flex align-items-center font-small text-muted">
+          <image class="guarantee-money-icon" src="/images/baozhengjin.png"></image> 保证金{{item.deposit}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

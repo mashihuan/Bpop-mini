@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bp-avatar": "/components/bp-avatar/bp-avatar",
+    "bp-rank-call": "/components/bp-rank-call/bp-rank-call",
+    "bp-favorite": "/components/bp-favorite/bp-favorite",
+    "bp-attention-btn": "/components/bp-attention-btn/bp-attention-btn"
+  }
+}

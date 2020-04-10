@@ -1,0 +1,77 @@
+<view class="red-wrap">
+  <!-- 未打开红包  -->
+  <block wx:if="{{redStatus == 1}}">
+    <view class="red-container animated jackInTheBox">
+      <image class="logo rounded-circle" src="/images/logo.png"></image>
+      <view class="title white letter-spacing">币泡泡小姐姐送红包啦</view>
+      <view class="open rounded-circle" bindtap="onOpenRed" data-type="{{'hand'}}"></view>
+      <view class="desc white letter-spacing">{{redInfo.title}}</view>
+    </view>
+  </block>
+  
+  <!-- 抢红包成功 -->
+  <block wx:if="{{redStatus == 2}}">
+    <view class="red-container-opened animated jackInTheBox">
+      <view class="price-wrap d-flex justify-content-center">
+        <view class="price font-bold red rate">{{amount}}</view>
+         <!-- 泡泡糖 -->
+        <view class="name red font-bold" wx:if="{{redInfo.type == 2}}">个泡泡糖</view>
+        <!-- 非泡泡糖 -->
+        <view class="name red font-bold" wx:else>{{currencyName}}</view>
+      </view>
+      <view class="rmb font-small red" wx:if="{{rmb > 0}}">{{'≈￥' + rmb}}</view>
+      <view class="account font-small" wx:if="{{phone}}">
+        <text class="red">红包已放入</text> <text class="font-bold">{{phone}} 账户</text>
+      </view>
+      <view class="btn-wrap d-flex justify-content-center">
+        <button class="cu-btn btn font-small red letter-spacing" bindtap="onWithDraw" wx:if="{{!phone}}">立即领取</button>
+        <button class="cu-btn btn font-small red letter-spacing" bindtap="onDownload" wx:if="{{phone}}">立即下载APP领取</button>
+      </view>
+      <view class="desc white letter-spacing">{{redInfo.title}}</view>
+    </view>
+  </block>
+  
+  <!-- 已领完红包/新手红包 -->
+  <block wx:if="{{redStatus == 3 || redStatus == 4}}">
+    <view class="red-container-finish-wrap">
+      <view class="red-container-finish animated jackInTheBox">
+        <block wx:if="{{redStatus == 3}}">
+          <view class="title red font-bold">来晚一步，红包被领完了</view>
+        </block>
+        <block wx:if="{{redStatus == 4}}">
+          <view class="title red font-bold">该红包为新手红包</view>
+          <view class="title red font-bold">只有新用户才可以领取</view>
+        </block>
+        <view class="desc white letter-spacing">{{redInfo.title}}</view>
+      </view>
+      <view class="btn-wrap d-flex justify-content-center">
+        <button class="cu-btn white button" bindtap="onDownload">下载币泡泡，领取更多福利</button>
+      </view>
+    </view>
+  </block>
+  
+  <!-- 抢到红包的人员列表 -->
+  <block wx:if="{{redStatus != 1 && redStatus != 4}}">
+    <view class="list-wrap">
+      <view class="red-num white" wx:if="{{amount > 0}}">{{recordList.length}} / {{redInfo.totalNum}}</view>
+      <view class="red-num white" wx:else>{{redInfo.totalNum}}个红包，已被抢完</view>
+      <view class="list-title white d-flex justify-content-center">看看大家的手气</view>
+      <view class="person-list" wx:if="{{recordList.length > 0}}">
+        <block wx:for="{{recordList}}" wx:key="index">
+          <view class="person-item d-flex align-items-center justify-content-between animated fadeInRight">
+            <view class="item-left d-flex align-items-center">
+              <image class="avatar rounded-circle" lazy-load src="{{item.head_img}}"></image>
+              <view class="name-wrap">
+                <view class="name white">{{item.nick_name}}</view>
+                <view class="time white">{{item.add_time}}</view>
+              </view>
+            </view>
+            <view class="item-right font-bold">{{item.amount}} {{redInfo.currencyName}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+  <!-- 加载动画 -->
+  <bp-loading wx:if="{{isShowLoadModal}}"></bp-loading>
+</view>

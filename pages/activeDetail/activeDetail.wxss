@@ -1,0 +1,20 @@
+.container {
+  padding-bottom: 112rpx;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 112rpx);
+  background: #f3f3f3;
+}
+.container-inner, .container-comment, .container-standings {
+  padding: 0 20rpx;
+  background: #fff;
+}
+.container-comment {
+  background: #FCFCFC;
+}
+.container-standings {
+  background: #f3f3f3;
+}
+.about-active {
+  padding: 0 20rpx 30rpx 20rpx;
+  background: #f3f3f3;
+}
+

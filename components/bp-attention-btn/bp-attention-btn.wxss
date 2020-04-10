@@ -1,0 +1,14 @@
+.follow-btn {
+  height: 52rpx;
+  line-height: 52rpx;
+  padding: 0 20rpx;
+  border-radius: 30rpx;
+  color: #ffa812;
+  background: #fff2e7;
+}
+.follow-btn .iconfont {
+  margin-right: 10rpx;
+}
+.cancel {
+  color: #999;
+}

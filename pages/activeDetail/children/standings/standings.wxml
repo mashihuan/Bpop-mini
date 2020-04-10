@@ -1,0 +1,29 @@
+<view class="standings-wrap">
+    <view class="title font-big font-bold">TA的战绩</view>
+    <view class="standing-inner">
+      <view class="top font-bold d-flex align-items-center">
+        <image src="/images/coin-icon.png" />荐币数据
+      </view>
+      <view class="center d-flex align-items-center">
+        <view class="totalNum">
+          <view class="text-muted font-small">
+            <text class="num font-bold">{{standingsInfo.recNum || 0}}</text>
+            次</view>
+          <view class="text-muted font-small desc">荐币</view>
+        </view>
+        <view class="succNum">
+          <view class="text-muted font-small">
+            <text class="num font-bold">{{standingsInfo.successNum || 0}}</text>
+            次</view>
+          <view class="text-muted font-small desc">成功</view>
+        </view>
+        <view class="averateRate">
+          <view class="text-muted font-small">
+            <text class="rate font-bold {{standingsInfo.avgRate >= 0 ? 'green' : 'red' }}">{{standingsInfo.avgRate || 0}}%</text>
+          </view>
+          <view class="text-muted font-small desc">平均荐币收益率</view>
+        </view>
+      </view>
+      <button class="cu-btn check-btn" bindtap="onGoToRecommend">查看TA的荐币</button>
+    </view>
+  </view>

@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="recharge-title font-bold">充值金额</view>
+  <view class="recharge-list d-flex align-items-center justify-content-between flex-wrap">
+    <block wx:for="{{rechargeList}}" wx:key="index">
+        <view class="recharge-item animated zoomIn d-flex flex-column justify-content-center  align-items-center {{currentIndex == index ? 'active' : ''}}" 
+          style="padding-top: {{item.give > 0 ? '28rpx' : '0rpx'}}"
+          bindtap="onSelectMoney" data-id="{{item.id}}" data-money="{{item.money}}"
+          data-index="{{index}}"
+        >
+        <view class="give-sweet" wx:if="{{item.give > 0}}">赠送{{item.give}}泡泡糖</view>
+        <view class="num">{{item.sweet}}泡泡糖</view>
+        <view class="money text-muted">{{item.money}}元</view>
+        <!-- <view class="give-member theme-color">送泡泡会员1个月</view> -->
+      </view>
+    </block>
+  </view>
+  <view class="btn-wrap d-flex justify-content-center">
+    <button class="cu-btn white rechar-btn" 
+      loading="{{showBtnLoading}}"
+      disabled="{{showBtnLoading}}"
+    bindtap="onRecharge">确认充值</button>
+  </view>
+</view>

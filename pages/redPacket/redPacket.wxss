@@ -1,0 +1,156 @@
+page {
+  background: #5614DC;
+}
+.red-wrap {
+  min-height: 100%;
+  padding-top: 30%;
+  background: url('http://bpop.u-ico.com/file/wxmini/12.png') no-repeat;
+  background-size: 100% auto;
+}
+/* 未打开红包 */
+.red-container {
+  position: relative;
+  width: 547rpx;
+  height: 837rpx;
+  margin: 0 auto;
+  padding-top: 64rpx;
+  text-align: center;
+  background: url('http://bpop.u-ico.com/file/wxmini/02.png');
+  background-size: 100% 100%;
+}
+.red-container .logo {
+  width: 94rpx;
+  height: 94rpx;
+}
+.red-container .title, .red-container .desc, .red-container .open {
+  position: absolute;
+  width: 100%;
+  font-size: 30rpx;
+}
+.red-container .title {
+  top: 180rpx;
+  left: 50%;
+  width: 200rpx;
+  margin-left: -100rpx;
+  line-height: 46rpx;
+}
+.red-container .open {
+  top: 372rpx;
+  left: 50%;
+  width: 150rpx;
+  height: 150rpx;
+  margin-left: -75rpx;
+}
+.red-container .desc {
+  top: 590rpx;
+}
+/* 抢红包成功 */
+.red-container-opened, .red-container-finish {
+  position: relative;
+  width: 541rpx;
+  height: 865rpx;
+  margin: 0 auto;
+  padding-top: 76rpx;
+  text-align: center;
+}
+.red-container-opened {
+  background: url('http://bpop.u-ico.com/file/wxmini/09.png');
+  background-size: 100% 100%;
+}
+.red-container-opened .price-wrap .price {
+  font-size: 80rpx;
+  line-height: 1;
+}
+.red-container-opened .price-wrap .name {
+  font-size: 34rpx;
+  align-self: flex-end;
+}
+.red-container-opened .rmb {
+  margin-right: 82rpx;
+  text-align: right;
+  line-height: 1;
+}
+.red-container-opened .account {
+  position: absolute;
+  width: 100%;
+  top: 260rpx;
+}
+.red-container-opened .btn-wrap {
+  position: absolute;
+  top: 320rpx;
+  width: 100%;
+}
+.red-container-opened .btn-wrap .btn {
+  width: 250rpx;
+  /* height: 54rpx; */
+  padding-right: 0;
+  padding-left: 0;
+  background: #ffdd21;
+}
+.red-container-opened .desc, .red-container-finish .desc {
+  position: absolute;
+  top: 620rpx;
+  width: 100%;
+  font-size: 30rpx;
+}
+/* 已领完红包 */
+.red-container-finish {
+  background: url('http://bpop.u-ico.com/file/wxmini/18.png');
+  background-size: 100% 100%;
+  padding-top: 180rpx;
+  font-size: 30rpx;
+}
+.red-container-finish-wrap .btn-wrap button {
+  position: relative;
+  top: -50rpx;
+  width: 541rpx;
+  height: 100rpx;
+  font-size: 30rpx;
+  background: linear-gradient(#EA73E6, #BA4FF7) !important;
+}
+/* 抢到红包的人员列表 */
+.list-wrap {
+  padding: 0 76rpx;
+  line-height: 1;
+}
+.list-wrap .red-num,
+.list-wrap .name,
+.list-wrap .item-right {
+  font-size: 26rpx;
+}
+.list-wrap .list-title {
+  position: relative;
+  margin-top: 40rpx;
+  font-size: 30rpx;
+}
+.list-wrap .list-title:before, .list-wrap .list-title:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  width: 170rpx;
+  height: 3rpx;
+  margin-top: -1.5rpx;
+  background: #fff;
+}
+.list-wrap .list-title:before {
+  right: 0;
+}
+.list-wrap .list-title:after {
+  left: 0;
+}
+.list-wrap .person-item {
+  padding: 40rpx 0;
+  border-bottom: 3rpx solid #a680ec;
+}
+.list-wrap .person-item .avatar {
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 15rpx;
+}
+.list-wrap .person-item .time {
+  margin-top: 20rpx;
+  font-size: 22rpx;
+}
+.list-wrap .person-item .item-right {
+  color: #fff725;
+}

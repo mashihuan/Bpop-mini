@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "detail-bg": "../children/detail-bg/detail-bg",
+    "detail-data": "../children/detail-data/detail-data",
+    "detail-desc": "../children/detail-desc/detail-desc",
+    "bp-attention-btn": "/components/bp-attention-btn/bp-attention-btn",
+    "bp-comment-item": "/components/bp-comment-item/bp-comment-item",
+    "bp-active-item": "/components/bp-active-item/bp-active-item",
+    "bp-comment-input": "/components/bp-comment-input/bp-comment-input"
+  },
+  "navigationBarTitleText": "详情",
+  "navigationBarBackgroundColor": "#FFA000",
+  "backgroundColorTop": "#FFA000",
+  "navigationBarTextStyle": "white"
+}

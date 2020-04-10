@@ -1,0 +1,31 @@
+<view class="flag-list d-flex align-items-center">
+  <view class="flag-item rank star {{showSkeleton ? 'skeleton-class' : ''}}" wx:if="{{item.userLevelTitle <=10}}" style="border-color: {{showSkeleton ? '#f3f3f3' : '#8d8d8d'}}">
+    <text class="iconfont icon-star"></text>
+    <text>{{item.userLevelTitle}}</text>
+  </view>
+  <view class="flag-item rank moon" wx:if="{{item.userLevelTitle <=20 && item.userLevelTitle >10}}">
+    <text class="iconfont icon-moon--f"></text>
+    <text>{{item.userLevelTitle}}</text>
+  </view>
+  <view class="flag-item rank sun" wx:if="{{item.userLevelTitle <=30 && item.userLevelTitle >20}}">
+    <text class="iconfont icon-sun"></text>
+    <text>{{item.userLevelTitle}}</text>
+  </view>
+  <view class="flag-item rank zuanshi" wx:if="{{item.userLevelTitle <=40 && item.userLevelTitle >30}}">
+    <text class="iconfont icon-zuanshi"></text>
+    <text>{{item.userLevelTitle}}</text>
+  </view>
+  <view class="flag-item rank huangguan" wx:if="{{item.userLevelTitle <=50 && item.userLevelTitle >40}}">
+    <text class="iconfont icon-huangguan"></text>
+    <text>{{item.userLevelTitle}}</text>
+  </view>
+  <view class="flag-item group" wx:if="{{item.hasGroup}}">
+    <text class="iconfont icon-weixin"></text>
+    <text>群</text>
+  </view>
+  <view class="call theme-bg" wx:if="{{item.fansCurrencyName}}">
+    <image class="call-icon" src="/images/makecall.png" /><text>{{item.fansCurrencyName}}</text>
+  </view>
+  <view class="fans font-bold" wx:if="{{showFans && item.isCar}}">铁粉</view>
+  <view class="host" wx:if="{{showHost}}">(楼主)</view>
+</view>

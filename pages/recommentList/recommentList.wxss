@@ -1,0 +1,9 @@
+page {
+  padding: 20rpx;
+  width: auto;
+}
+.container {
+  padding: 20rpx;
+  border-radius: 16rpx;
+  background: #fff;
+}

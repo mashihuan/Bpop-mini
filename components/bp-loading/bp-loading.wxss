@@ -1,0 +1,8 @@
+.cu-load.load-modal {
+  bottom: 0;
+  box-shadow: none;
+}
+.cu-load.load-modal image {
+  width: 90rpx;
+  height: 90rpx;
+}

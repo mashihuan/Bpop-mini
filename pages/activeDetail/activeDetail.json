@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "bp-active-item": "/components/bp-active-item/bp-active-item",
+    "bp-avatar": "/components/bp-avatar/bp-avatar",
+    "bp-rank-call": "/components/bp-rank-call/bp-rank-call",
+    "bp-comment-item": "/components/bp-comment-item/bp-comment-item",
+    "bp-standings": "./children/standings/standings",
+    "bp-favorite": "/components/bp-favorite/bp-favorite",
+    "bp-comment-input": "/components/bp-comment-input/bp-comment-input"
+  },
+  "navigationBarTitleText": "详情"
+}

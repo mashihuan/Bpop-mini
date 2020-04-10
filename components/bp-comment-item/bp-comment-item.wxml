@@ -1,0 +1,73 @@
+<view class="comment-wrap" wx:if="{{commentCount > 0}}">
+    <view class="comment-num font-bold">共{{commentCount}}条评论</view>
+    <!-- 一级评论 -->
+      <view class="comment-list">
+        <block wx:for="{{commentList}}" wx:key="index">
+          <view class="comment-item d-flex">
+            <bp-avatar size="60" item="{{item}}"></bp-avatar>
+            <view class="item-right flex-1">
+              <view class="levelOne-wrap" 
+                bindtap="onReplyComment" 
+                data-commentId="{{item.id}}"
+                data-isMine="{{item.isMine}}"
+                data-nickName="{{item.nickName}}"
+              >
+                <view class="item-right-top d-flex align-items-center">
+                  <text>{{item.nickName}}</text>
+                  <bp-rank-call item="{{item}}" showFans="{{true}}" showHost="{{kolid == item.kolid}}"></bp-rank-call>
+                </view>
+                <view class="item-content-wrap">
+                  <text space="nbsp" selectable decode class="item-content break-word">{{item.commentContent}}</text>
+                </view>
+                <view class="font-small text-muted">{{item.addTime}}</view>
+              </view>
+              <!-- 二级评论 -->
+              <view class="reply-wrap" wx:if="{{item.resultList.length > 0}}">
+                <block wx:for="{{item.resultList}}" wx:for-item="reply" 
+                      wx:for-index="ind" wx:key="ind"
+                >
+                  <view class="reply-item d-flex" hidden="{{item.isUnfold && ind > 0}}">
+                    <bp-avatar size="60" item="{{reply}}"></bp-avatar>
+                    <view class="reply-right flex-1" 
+                      bindtap="onReplyComment" 
+                      data-commentId="{{reply.id}}"
+                      data-isMine="{{reply.isMine}}"
+                      data-nickName="{{item.nickName}}"
+                    >
+                      <view class="reply-right-top d-flex align-items-center">
+                        <text>{{reply.nickName}}</text>
+                        <bp-rank-call showHost="{{kolid == reply.kolid}}" item="{{reply}}" showFans="{{true}}"></bp-rank-call>
+                      </view>
+                      <view class="reply-content-wrap">
+                        回复 <text class="theme-color">@{{reply.beNickName}}</text>：
+                        <text class="break-word" selectable decode space="nbsp">{{reply.commentContent}}</text>
+                      </view>
+                      <view class="text-muted font-small">{{reply.addTime}}</view>
+                    </view>
+                  </view>
+                </block>
+                <!-- 展开收起 -->
+                <block wx:if="{{item.resultList.length > 1}}">
+                  <view class="more font-small" 
+                    bindtap="onUnfoldComment"
+                    data-isUnfold="{{item.isUnfold}}"
+                    data-index="{{index}}"
+                    hidden="{{!item.isUnfold}}"
+                  >展开{{item.resultList.length - 1}}条回复</view>
+                  <view class="more font-small" 
+                    bindtap="onUnfoldComment"
+                    data-isUnfold="{{item.isUnfold}}"
+                    data-index="{{index}}"
+                    hidden="{{item.isUnfold}}"
+                  >收起</view>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="more-btn text-center font-bg" 
+        bindtap="onGetMoreComment"
+        wx:if="{{isShowMoreComment}}"
+      >展开更多评论</view>
+  </view>

@@ -1,0 +1,11 @@
+<view class="container" wx:if="{{recommentList.length > 0}}">
+  <block wx:for="{{recommentList}}" wx:key="index">
+    <bp-recomment-item item="{{item}}" bindonGoToDetail="onGoToDetail"></bp-recomment-item>
+  </block>
+</view>
+<!-- 无内容 -->
+<bp-empty wx:if="{{!hasData}}"></bp-empty>
+<!-- 加载状态 -->
+<view class="cu-load {{loadStatus}}" wx:if="{{recommentList.length > 3}}"></view>
+<!-- 加载动画 -->
+<bp-loading wx:if="{{isShowLoadModal}}"></bp-loading>

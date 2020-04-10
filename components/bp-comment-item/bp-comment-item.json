@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bp-avatar": "/components/bp-avatar/bp-avatar",
+    "bp-rank-call": "/components/bp-rank-call/bp-rank-call"
+  }
+}

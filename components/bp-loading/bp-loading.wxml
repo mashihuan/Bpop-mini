@@ -1,0 +1,6 @@
+<!-- 加载动画 -->
+  <view class="mask" catchtouchmove="ontouchmove"></view>
+  <view class='cu-load load-modal' catchtouchmove="ontouchmove">
+    <image src='/images/logo.png' class='png rounded-circle' mode='aspectFit'></image>
+    <view class='gray-text text-muted'>加载中...</view>
+  </view>

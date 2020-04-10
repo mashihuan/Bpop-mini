@@ -1,0 +1,3 @@
+<view class="empty-wrap animated fadeIn">
+  <image class="empty-icon w-100" mode="widthFix" src="/images/empty.png"></image>
+</view>

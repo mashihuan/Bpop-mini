@@ -1,0 +1,88 @@
+<view class="container">
+  <!-- 详情背景 -->
+  <detail-bg item="{{recommendDetail}}"></detail-bg>
+
+  <!-- 详情数据 -->
+  <detail-data item="{{recommendDetail}}" bindonEndRecommend="onEndRecommend"></detail-data>
+
+  <!-- 详情描述 -->
+  <detail-desc></detail-desc>
+  
+  <view class="container-comment" wx:if="{{recommendDetail.status == 2 ||recommendDetail.ischarge || recommendDetail.charge == 0 || recommendDetail.ismine}}">
+    <!-- 评论组件 -->
+    <bp-comment-item commentCount="{{commentCount}}"
+      isShowMoreComment="{{isShowMoreComment}}"
+      commentList="{{commentList}}"
+      bindonUnfoldComment="onUnfoldComment"
+      bindonGetMoreComment="onGetMoreComment"
+      bindonReplyComment="onReplyComment"
+    ></bp-comment-item>
+  </view>
+
+  <block>
+    <!-- 相关动态 -->
+    <view class="about-active font-bold font-big" wx:if="{{activeList.length > 0}}">相关动态</view>
+    <view class="container-inner">
+      <block wx:for="{{activeList}}" wx:key="index" wx:if="{{item.id != id}}">
+        <bp-active-item item="{{item}}"></bp-active-item>
+      </block>
+      <view class="cu-load {{loadStatus}}"></view>
+    </view>
+  </block>
+  
+  <!-- 解锁按钮 -->
+  <block wx:if="{{!recommendDetail.ischarge&&recommendDetail.charge>0&&!recommendDetail.ismine&&recommendDetail.status==1}}">
+    <view class="bottom-wrap fixed-bottom d-flex align-items-center justify-content-center">
+      <button class="cu-btn" bindtap="onUnlock">
+        解锁<image class="sweet-icon" src="/images/paopaotang.png"></image>
+        x{{recommendDetail.charge}}
+      </button>
+    </view>
+  </block>
+
+<!-- 解锁弹窗 -->
+<view class="cu-modal unLock-modal bottom-modal {{showModal ? 'show' : ''}}" >
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-orange d-flex align-items-center"
+        bindtap="onGoToTradingRecord">
+      交易记录<view class="iconfont icon-ARROW arrow theme-color font-bold"></view>
+      </view>
+      <view class="action text-orange" bindtap="hideModal">取消</view>
+    </view>
+    <view class="padding">
+      <view class="detail d-flex align-items-center justify-content-between">
+        <view class="">功能详情</view>
+        <view class="">查看荐币详情</view>
+      </view>
+      <view class="use d-flex align-items-center justify-content-between">
+        <view class="">需使用</view>
+        <view class="theme-color">{{recommendDetail.charge}}个泡泡糖</view>
+      </view>
+      <view class="balance d-flex justify-content-end">泡泡糖余额{{moneyBalance}}个</view>
+      <view class="desc theme-color font-small">早一分钟查看，早一分钟建仓</view>
+      <block wx:if="{{recommendDetail.charge > moneyBalance}}">
+        <button class="cu-btn button w-100" bindtap="onGoToRecharge">余额不足，请充值</button>
+      </block>
+      <block wx:if="{{recommendDetail.charge <= moneyBalance}}">
+        <button class="cu-btn button w-100" loading="{{showBtnLoading}}" disabled="{{showBtnLoading}}" bindtap="onConfirmBuy">确认</button>
+      </block>
+    </view>
+  </view>
+</view>
+  
+  <block wx:if="{{recommendDetail.status==2||recommendDetail.ischarge||recommendDetail.charge==0||recommendDetail.ismine}}">
+    <!-- 评论输入框 -->
+    <bp-comment-input
+      item="{{activeDetail}}"
+      content="{{content}}"
+      placeholder="{{placeholder}}"
+      isFocus="{{isFocus}}"
+      isShowFavorite="{{false}}"
+      bindonInputChage="onInputChage"
+      bindonSubmit="onSubmit"
+    ></bp-comment-input> 
+  </block>
+   <!-- loading动画 -->
+   <bp-loading wx:if="{{isShowLoadModal}}"></bp-loading>
+</view>

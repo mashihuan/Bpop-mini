@@ -1,0 +1,9 @@
+.item-bottom-right > view {
+  margin-right: 20rpx; 
+}
+.item-bottom-right > view > .iconfont {
+  margin-right: 7rpx;
+}
+.like {
+  font-size: 28rpx;
+}

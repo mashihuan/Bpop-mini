@@ -1,0 +1,96 @@
+page {
+  background: #fff;
+}
+
+.indexes {
+  position: relative;
+}
+
+.indexBar {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  padding: 0rpx 20rpx 20rpx 60rpx;
+  display: flex;
+  align-items: center;
+}
+
+.indexBar .indexBar-box {
+  width: 40rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+}
+
+.indexBar-item {
+  flex: 1;
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #c7c7c7;
+}
+
+.indexBar-item.active {
+  border-radius: 50%;
+  color: #fff;
+  background:linear-gradient(180deg,rgba(255,169,17,1) 0%,rgba(254,111,22,1) 100%);
+}
+
+movable-view.indexBar-item {
+  width: 40rpx;
+  height: 40rpx;
+  z-index: 9;
+  position: relative;
+}
+
+movable-view.indexBar-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  height: 20rpx;
+  width: 4rpx;
+  background-color: #f37b1d;
+}
+
+.indexToast {
+  position: fixed;
+  top: 0;
+  right: 80rpx;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  color: #fff;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 48rpx;
+}
+
+.cu-list.menu-avatar>.cu-item {
+  height: 104rpx;
+}
+
+.cu-list.menu-avatar>.cu-item .content {
+  left: 30rpx;
+  right: 80rpx;
+  width: auto;
+  height: 104rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.cu-list.menu-avatar>.cu-item .content .country-name {
+  font-size: 32rpx;
+}
+.cu-list.menu-avatar>.cu-item .content .country-code {
+  padding: 6rpx 16rpx;
+  border-radius: 10rpx;
+  background: #F0F0F0;
+  color: #999;
+}

@@ -1,0 +1,17 @@
+.container {
+  padding: 260rpx 60rpx 0 60rpx;
+}
+.container .logo {
+  width: 130rpx;
+  height: 130rpx;
+}
+.container .title {
+  margin-top: 80rpx;
+}
+.container .desc {
+  margin-top: 20rpx;
+}
+.container .btn {
+  width: 100%;
+  margin-top: 40rpx;
+}

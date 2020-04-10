@@ -1,0 +1,46 @@
+<!-- 轮播图 -->
+<bp-banner list="{{bannerList}}" hasBanner="{{hasBanner}}"></bp-banner>
+<!-- 写动态按钮 -->
+<button class="cu-btn edit-btn d-flex align-items-center button animated fadeInUp"
+  bindtap="onWriteActive"
+  wx:if="{{isShowEditBtn}}"
+><view class="iconfont icon-xiewenzhang white"></view>写动态</button>
+<!-- tab切换栏 -->
+<bp-tab-control class="tab-control {{isFixed ? 'active' : ''}}"
+  list="{{tabList}}" 
+  currentIndex="{{currentIndex}}"
+  bindonSwitchTab="onSwitchTab"
+  showNotify="{{showNotify}}"
+></bp-tab-control>
+<view style="height:80rpx" wx:if="{{isFixed}}"></view>
+<!-- 动态 -->
+<view class="active-item-wrap relative" wx:key="index">
+  <swiper style="height:{{activeList[currentIndex].swiperHeight + 'px'}}; min-height: {{minSwiperHeight + 'px'}}"
+    current="{{currentIndex}}"
+    bindchange="onSwiperChange"
+  >
+    <block wx:for="{{activeList}}" wx:key="index">
+      <swiper-item class="swiper-item" wx:if="item.list.length > 0">
+        <block wx:for="{{item.list}}" wx:for-index="ind" wx:key="ind">
+          <view class="{{index == 0 ? 'item1' : 'item2'}}">
+            <bp-active-item class="bp-active-item" item="{{item}}" 
+              showSkeleton="{{isShowFirstLoadingImg}}"
+              skeleton-class="skeleton"
+            ></bp-active-item>
+          </view>
+        </block>
+          <!-- 加载状态 -->
+          <view class="cu-load {{item.loadStatus}}" wx:if="{{!isShowFirstLoadingImg && item.list.length > 0}}"></view>
+          <!-- 空内容图片 -->
+          <image wx:if="{{!item.hasData}}" class="emptyImg" src="/images/empty.png" mode="widthFix"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 返回顶部 -->
+<image class="backToTop" src="/images/top.png" 
+  bindtap="onBackToTop"
+  wx:if="{{isShowBackToTop}}"
+></image>
+
+

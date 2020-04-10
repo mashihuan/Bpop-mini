@@ -1,0 +1,28 @@
+<wxs src="../../../../utils/format.wxs" module="format" />
+
+<view class="detail-bg">
+  <view class="detail-bg-top d-flex align-items-center justify-content-between">
+    <bp-avatar item="{{item}}" size="{{100}}"></bp-avatar>
+    <view class="name-wrap flex-1">
+      <view class="name font-bold">{{item.kolname}}</view>
+      <view class="num font-small">近90天结束荐币<text>{{item.recEndNum}}</text>次</view>
+    </view>
+    <block wx:if="{{!item.ismine}}">
+      <!-- <bp-attention-btn item="{{item}}"></bp-attention-btn> -->
+    </block>
+  </view>
+  <view class="detail-bg-bottom d-flex flex-wrap">
+    <view class="fail w-50">
+      <view class="desc text-muted font-small">荐币翻车率</view>
+      <view class="rate"><text>{{(item.successRate == 0 ? 0 : 100 - item.successRate) || 0}}</text>%</view>
+    </view>
+    <view class="earn w-50">
+      <view class="desc text-muted font-small">平均收益率</view>
+      <view class="rate {{item.avgRate >= 0 ? 'green' : 'red'}}"><text>{{item.avgRate || 0}}</text>%</view>
+    </view>
+    <view class="expect w-50">
+      <view class="desc text-muted font-small">预期涨幅到达率</view>
+      <view class="rate"><text>{{format.toFixed(item.expectSuccessRate || 0)}}</text>%</view>
+    </view>
+  </view>
+</view>

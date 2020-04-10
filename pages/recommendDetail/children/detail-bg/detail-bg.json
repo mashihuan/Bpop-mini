@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bp-avatar": "/components/bp-avatar/bp-avatar",
+    "bp-attention-btn": "/components/bp-attention-btn/bp-attention-btn"
+  }
+}

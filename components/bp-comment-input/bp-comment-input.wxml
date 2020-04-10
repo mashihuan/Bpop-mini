@@ -1,0 +1,21 @@
+<view class="mask" wx:if="{{isFocus1}}"></view>
+<view class="comment-wrap1 d-flex justify-content align-items-center animated fadeInDown">
+  <view class="input-wrap flex-1 d-flex align-items-center">
+    <view class="iconfont icon-xiewenzhang"></view>
+    <input type="text" placeholderClass="placeholderClass" class="flex-1"
+        cursor-spacing="5"
+        value="{{content}}"
+        placeholder="{{placeholder}}" 
+        bindfocus="onInputFocus"
+        bindblur="onInputBlur"
+        bindinput="onInputChage"
+        focus="{{isFocus1}}"
+    />
+  </view>
+  <block wx:if="{{!isFocus1 && isShowFavorite}}">
+    <bp-favorite showMessage="{{false}}" item="{{item}}"></bp-favorite>
+  </block>
+  <block wx:if="{{isFocus1}}">
+    <button class="cu-btn button submit" bindtap="onSubmit">发送</button>
+  </block>
+</view>

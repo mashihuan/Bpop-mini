@@ -1,0 +1,40 @@
+<view class="status-bar" style="height: {{statusBarHeight + 'px'}}"></view>
+<view class="logo-bg">
+ <text class="cuIcon-back back-icon" bindtap="onBackClick"></text>
+  <view class="logo-title font-bold white">登录</view>
+</view>
+<view class="container bg-white">
+  <view class="input-wrap d-flex align-items-center justify-content-between" bindtap="onChooseCountry">
+    <image class="icon phone-icon" src="/images/phone-icon.png"></image>
+    <input type="text" placeholder="" value="{{countryName}}"
+      bindinput="onInputChange" disabled data-value="{{'countryName'}}"
+    />
+    <view class="areaCode d-flex align-items-center">+{{isoCode}} <text class="font-bold iconfont icon-ARROW"></text> </view>
+  </view>
+  <view class="input-wrap d-flex align-items-center justify-content-between">
+    <image class="icon phone-icon" src="/images/phone-icon.png"></image>
+    <input type="number" placeholder="请输入手机号" 
+      value="{{phoneNum}}" placeholder-class="placeholderClass"
+      bindinput="onInputChange" data-value="{{'phoneNum'}}"
+    />
+  </view>
+  <view class="input-wrap d-flex align-items-center justify-content-between">
+    <image class="icon calc-icon" src="/images/calc-icon.png"></image>
+    <input type="number" placeholder="请输入计算结果" 
+      value="{{picCode}}" placeholder-class="placeholderClass"
+      bindinput="onInputChange" data-value="{{'picCode'}}"
+    />
+    <image src="{{picUrl}}" class="codePic" bindtap="_getPicCode" />
+  </view>
+  <view class="input-wrap d-flex align-items-center justify-content-between">
+    <image class="icon safe-icon" src="/images/safe-icon.png"></image>
+    <input type="number" placeholder="请输入短信验证码" 
+      value="{{smsCode}}" placeholder-class="placeholderClass"
+      bindinput="onInputChange" data-value="{{'smsCode'}}"
+    />
+    <button class="cu-btn theme-color" disabled="{{countDown > 0}}" 
+      bindtap="getSmsCode"
+    >{{countDown > 0 ? (countDown + 's') : '获取验证码'}}</button>
+  </view>
+  <button class="btn button cu-btn" loading="{{showBtnLoading}}" disabled="{{showBtnLoading}}" bindtap="onLoginEvent">登录</button>
+</view>

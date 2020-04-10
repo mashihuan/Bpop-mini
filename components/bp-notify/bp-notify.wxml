@@ -1,0 +1,3 @@
+<view class="notify-wrap theme-bg white text-center"
+  style="height: {{showNotify ? '64rpx' : '0rpx'}}; opacity: {{showNotify ? '0.9' : '0'}}"
+>数据更新成功~</view>

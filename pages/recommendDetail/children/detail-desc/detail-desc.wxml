@@ -1,0 +1,6 @@
+<view class="detail-desc d-flex flex-column text-muted">
+  <text>取自mykoten全网均价</text>
+  <text>荐币者可能会提前结束荐币，注意接收App通知</text>
+  <text>所有荐币均为KOL个人行为，不代表官方观点！</text>
+  <text>炒币有风险，跟单需谨慎</text>
+</view>

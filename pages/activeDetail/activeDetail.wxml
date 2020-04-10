@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="container-inner">
+    <!-- 动态组件 -->
+    <bp-active-item item="{{activeDetail}}" isDetail="{{true}}"></bp-active-item>
+  </view>
+
+  <view class="container-comment">
+    <!-- 评论组件 -->
+    <bp-comment-item commentCount="{{commentCount}}"
+      isShowMoreComment="{{isShowMoreComment}}"
+      commentList="{{commentList}}"
+      bindonUnfoldComment="onUnfoldComment"
+      bindonGetMoreComment="onGetMoreComment"
+      bindonReplyComment="onReplyComment"
+      kolid="{{kolid}}"
+    ></bp-comment-item>
+  </view>
+
+  <view class="container-standings">
+    <!-- 战绩 -->
+    <bp-standings 
+      bindonGoToRecommend="onGoToRecommend" 
+      standingsInfo="{{standingsInfo}}"
+    ></bp-standings>
+  </view>
+
+  <block>
+    <view class="about-active font-bold font-big" wx:if="{{activeList.length > 1}}">相关动态</view>
+    <view class="container-inner">
+      <!-- 相关动态 -->
+      <block wx:for="{{activeList}}" wx:key="index" wx:if="{{item.id != id}}">
+        <bp-active-item item="{{item}}"></bp-active-item>
+      </block>
+      <view class="cu-load {{loadStatus}}" wx:if="{{hasActive}}"></view>
+    </view>
+  </block>
+  
+  
+  <!-- 评论输入框 -->
+  <bp-comment-input
+    item="{{activeDetail}}"
+    content="{{content}}"
+    placeholder="{{placeholder}}"
+    isFocus="{{isFocus}}"
+    bindonInputChage="onInputChage"
+    bindonSubmit="onSubmit"
+  ></bp-comment-input>  
+
+  <!-- loading动画 -->
+  <bp-loading wx:if="{{isShowLoadModal}}"></bp-loading>
+</view>

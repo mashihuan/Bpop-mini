@@ -1,0 +1,56 @@
+.container {
+  padding-bottom: 148rpx;
+  padding-bottom: calc(env(safe-area-inset-bottom) + 148rpx);
+  background: #f3f3f3;
+}
+.container-inner, .container-comment {
+  padding: 0 20rpx;
+  background: #fff;
+}
+.container-comment {
+  background: #FCFCFC;
+}
+.about-active {
+  padding: 20rpx 20rpx 30rpx 20rpx;
+  background: #f3f3f3;
+}
+.bottom-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 148rpx;
+  background: #fff;
+}
+.bottom-wrap button {
+  width: 90%;
+  height: 96rpx;
+  border-radius:25px;
+  font-size: 32rpx;
+  color: #fff;
+  box-shadow: 0rpx 6rpx 6rpx #FFE9D8;
+  background:linear-gradient(180deg,rgba(255,169,17,1) 0%,rgba(254,111,22,1) 100%);
+}
+.bottom-wrap .sweet-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin: 0 10rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+}
+
+.unLock-modal .detail, .unLock-modal .use, .unLock-modal .balance {
+  margin-bottom: 30rpx;
+}
+.unLock-modal .cu-bar .action:first-child {
+  font-size: 28rpx;
+}
+.unLock-modal .desc {
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #FF8615;
+}
+.unLock-modal button {
+  border-radius: 100rpx;
+}
+

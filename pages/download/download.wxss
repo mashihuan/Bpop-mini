@@ -1,0 +1,12 @@
+page {
+  background: #fff;
+}
+.container button {
+  position: fixed;
+  top: 960rpx;
+  left: 120rpx;
+  right: 120rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  opacity: 0;
+}

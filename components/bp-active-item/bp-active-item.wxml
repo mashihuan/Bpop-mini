@@ -1,0 +1,45 @@
+<wxs src="../../utils/format.wxs" module="format" />
+
+<view class="active-item animated fadeIn" style="border-bottom: 1rpx solid #eee;" bindtap="onGoToDetail">
+  <view class="item-top d-flex align-items-center">
+    <view class="item-top-left">
+      <!-- 头像组件 -->
+      <bp-avatar item="{{item}}" showSkeleton="{{showSkeleton}}" skeleton-class="skeleton-class"></bp-avatar>
+    </view>
+    <view class="item-top-right d-flex flex-1 justify-content-between">
+      <view class="item-top-right-inner">
+        <view class="name font-bold {{showSkeleton ? 'skeleton-class' : ''}}">{{item.kolname}}</view>
+          <!-- 等级组件 -->
+          <bp-rank-call item="{{item}}" showSkeleton="{{showSkeleton}}" skeleton-class="skeleton-class"></bp-rank-call>
+        </view>
+        <block wx:if="{{isDetail}}">
+          <!-- 关注按钮 -->
+          <bp-attention-btn item="{{item}}"></bp-attention-btn>  
+        </block>
+    </view>
+  </view>
+  <view class="item-center">
+    <view class="item-text-wrap {{showSkeleton ? 'skeleton-class' : ''}}" style="max-height: {{isDetail ? 'auto' : '132rpx'}};overflow: {{isDetail ? 'inherit' : 'hidden'}}">
+      <text class="item-text break-word {{showSkeleton ? 'skeleton-class' : ''}}" decode selectable>{{item.commentContent}}</text>
+    </view>
+    <view class="more" wx:if="{{item1.isShowMore && !isDetail}}">查看全部</view>
+    <view class="img-list" wx:if="{{item.imglist.length > 0}}" 
+      style="overflow: {{isDetail ? 'inherit' : 'hidden'}};height: {{isDetail ? 'auto' : '190rpx'}}">
+      <block wx:for="{{item.imglist}}" wx:for-item="img" wx:key="index">
+        <view class="img-item" 
+            catchtap="onPreviewImage" 
+            data-current="{{img.imgUrl}}" 
+            data-imgList="{{item.imglist}}">
+          <image mode="aspectFill" src="{{img.imgUrl}}"/>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="item-bottom d-flex justify-content-between">
+    <view class="item-bottom-left text-muted font-small {{showSkeleton ? 'skeleton-class' : ''}}">{{format.activeTimeFormat(item.addDate)}}</view>
+    <!-- 点赞组件 -->
+    <block wx:if="{{!isDetail}}">
+      <bp-favorite item="{{item}}" showSkeleton="{{showSkeleton}}" skeleton-class="skeleton-class"></bp-favorite>
+    </block>
+  </view>
+</view>

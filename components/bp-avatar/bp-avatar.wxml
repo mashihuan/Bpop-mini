@@ -1,0 +1,6 @@
+<view class="avatar-wrap rounded-circle {{showSkeleton ? 'skeleton-class' : ''}}" style="width: {{size + 'rpx'}};height: {{size + 'rpx'}}">
+  <image class="avatar rounded-circle" src="{{item.kolpic || item.headImg}}"/>
+  <image class="vip" src="/images/vip.png" mode="widthFix" wx:if="{{item.isvip == 1}}" />
+  <image class="jigou" src="/images/jigou.png" mode="widthFix" wx:if="{{item.isvip == 2}}" />
+  <image class="jigou" src="/images/teyao.png" mode="widthFix" wx:if="{{item.isvip == 3}}" />
+</view>

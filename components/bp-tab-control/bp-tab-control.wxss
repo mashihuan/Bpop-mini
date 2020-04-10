@@ -1,0 +1,21 @@
+.list {
+  line-height: 80rpx;
+  box-shadow: 0 4rpx 4rpx #eee, 0 -2rpx 2rpx #fff;
+  background: #fff;
+}
+.list .item.active {
+  position: relative;
+  font-weight: bold;
+  color: #ff8615;
+}
+.list .item.active::after {
+  position: absolute;
+  bottom: 6rpx;
+  left: 50%;
+  content: '';
+  width: 28rpx;
+  height: 6rpx;
+  margin-left: -14rpx;
+  border-radius: 4rpx;
+  background: linear-gradient(90deg, rgba(255, 169, 17, 1) 0%, rgba(254, 111, 22, 1) 100%);
+}

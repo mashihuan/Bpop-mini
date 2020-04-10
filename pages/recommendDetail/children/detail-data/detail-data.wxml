@@ -1,0 +1,166 @@
+<wxs src="../../../../utils/format.wxs" module="format" />
+
+<view class="detail-data">
+    <view class="detail-data-top">
+      <view class="detail-time font-small text-muted">推荐时间：{{item.addtime}}</view>
+      <view class="detail-title">{{item.title}}</view>
+      <view class="detail-text">
+        <rich-text>{{item.recommendReason}}</rich-text>
+      </view>
+      <view class="img-list d-flex flex-wrap">
+        <block wx:for="{{item.imglist}}" wx:for-item="img" wx:for-index="ind" wx:key="ind">
+          <image class="img-item" src="{{img.imgUrl}}" mode="aspectFill"
+            catchtap="onPreviewImg"
+            data-urls="{{item.imglist}}"
+            data-index="{{ind}}"
+          ></image>
+        </block>
+      </view>
+    </view>
+    <block wx:if="{{item.status == 1&& !item.ismine}}">
+      <view class="status theme-bg">进行中</view>
+    </block>
+    <block wx:if="{{item.status == 1 && item.ismine}}">
+      <view class="status theme-bg end d-flex align-items-center" bindtap="onEndRecommend">
+        <text class="iconfont icon-weibiaoti--"></text>结束荐币
+      </view>
+    </block>
+    <block wx:if="{{item.status != 1}}">
+      <block wx:if="{{item.rate >= item.expectIncrease}}">
+        <view class="status text-muted">结束达到预期</view>
+      </block>
+      <block wx:else>
+        <view class="status text-muted">结束未达预期</view>
+      </block>
+    </block>
+    
+    <view class="detail-data-bottom">
+      <view class="bourse-wrap d-flex justify-content-between">
+        <view class="bourse d-flex align-items-center">
+          <image class="bourse-icon" src="/images/jiaoyisuo.png"></image>
+          <block wx:for="{{format.strToArr(item.exchange)}}" wx:for-item="ite" wx:for-index="ind" wx:key="ind">
+            <view class="theme-color bourse-item">{{ite}}</view>
+          </block>
+          <view class="theme-color bourse-item" bindtap="showModal" data-target="Modal" wx:if="{{item.otherExchanges}}">更多</view>
+        </view>
+        <view class="sweet-wrap">
+          <block wx:if="{{item.ismine}}">
+            <view class="people">已有{{item.chargeAccount}}人查看</view>
+          </block>
+          <view class="sweet d-flex align-items-center justify-content-end theme-color">
+            <image class="sweet-icon" src="/images/paopaotang.png"></image>
+            x{{item.charge}}
+          </view>
+        </view>
+      </view>
+      <view class="guarantee d-flex justify-content-center">
+        <block wx:if="{{item.status == 1 && !item.ismine && item.charge != 0 & !item.ischarge}}">
+          <view class="lock-wrap">
+            <image class="lock-icon" src="/images/lock.png"></image>
+            <block wx:if="{{item.deposit >= 0}}">
+              <image class="grarantee-icon" src="/images/baozhang.png"></image>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{item.ischarge || item.charge == 0 || item.ismine || item.status == 2}}">
+          <view class="coin-name">
+            <view class="name text-center font-bold">{{item.name}}</view>
+            <view class="desc d-flex align-items-center justify-content-center text-muted font-small">({{item.fullname}}) 
+              <!-- <view class="desc-flag font-small">大盘币</view> -->
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="rate-wrap d-flex justify-content-between">
+        <view class="current-rate">
+          <view class="desc font-small">{{item.status == 1 ? '当前涨幅' : '结束涨幅'}}</view>
+          <view class="rate-item {{item.rate >= 0 ? 'green' : 'red'}}">
+            <text class="rate font-bold">{{item.rate}}</text>%
+          </view>
+        </view>
+        <view class="end-desc">
+          <block wx:if="{{item.autoEnd == 1}}">
+            <view class="desc end font-small text-muted">到达预期自动结束</view>
+          </block>
+          <block wx:if="{{item.autoEnd == 0}}">
+            <image class="arrow-icon" src="/images/jiantou.png"></image>
+          </block>
+        </view>
+        <view class="expect-rate">
+          <view class="desc font-small">预期涨幅</view>
+          <view class="rate-item green"><text class="rate font-bold">{{item.expectIncrease}}</text>%</view>
+        </view>
+      </view>
+      <view class="period d-flex align-items-center justify-content-between">
+        <view class="desc text-muted">周期</view>
+        <view class="days theme-color">{{item.deadline}}天</view>
+      </view>
+      <view class="recommend-price d-flex align-items-center justify-content-between">
+        <view class="desc text-muted">推荐时价格</view>
+        <block wx:if="{{item.status == 2 || (item.ischarge || item.charge == 0 || item.ismine)}}">
+          <view class="days theme-color">￥{{item.startPrice}}</view>
+        </block>
+        <block wx:else>
+          <view class="days">- - -</view>
+        </block>
+      </view>
+      <view class="current-price d-flex align-items-center justify-content-between">
+        <view class="desc text-muted">{{item.status == 1 ? '当前价格' : '结束价格'}}</view>
+        <block wx:if="{{item.status == 2 || (item.ischarge || item.charge == 0 || item.ismine)}}">
+          <view class="days theme-color">￥{{item.endPrice}}</view>
+        </block>
+        <block wx:else>
+          <view class="days">- - -</view>
+        </block>
+      </view>
+      <view class="progress-wrap">
+        <view class="cu-progress round sm striped active" style="background: {{item.status == 1 ? '#FFF3E8' : '#eeeeee'}}">
+          <view class="{{item.status == 1 ? 'bg-orange' : 'bg-gray'}}" style="width:{{progressWidth}}%;"></view>
+        </view>
+        <block wx:if="{{item.status == 1}}">
+          <view class="end-time text-center text-muted font-small">距离结束截止：
+            <text class="theme-color">{{countDown}}</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="end-time text-center text-muted font-small">已结束：
+            <text class="">{{countDown}}</text>
+          </view>
+        </block>
+      </view>
+      <block wx:if="{{item.deposit > 0}}">
+        <view class="guarantee-price d-flex align-items-center">
+          <view class="price-left">
+            <view class="sweet d-flex align-items-center theme-color">
+              <image class="sweet-icon" src="/images/paopaotang.png"></image>
+              x{{item.deposit}}
+            </view>
+            <view class="desc font-small theme-color">保证金</view>
+          </view>
+          <view class="price-right">
+            <view class="desc font-small theme-color">* 结束未达到预期涨幅，购买者将瓜分保证金</view>
+            <view class="desc font-small theme-color">* 结束达到预期涨幅，退还泡泡糖</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+<!-- 其他交易所 -->
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">其他交易所</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-orange"></text>
+      </view>
+    </view>
+    <view class="padding-sm">
+      <view class="bourse-list d-flex align-items-center flex-wrap">
+        <block wx:for="{{format.strToArr(item.otherExchanges)}}" wx:key="index">
+          <view class="theme-color bourse-item">{{item}}</view>
+        </block>
+      </view>
+      <view class="desc">* 除四大交易所外，随机显示其它的五个交易所</view>
+    </view>
+  </view>
+</view>

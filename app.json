@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/active/active",
+    "pages/redPacket/redPacket",
+    "pages/bannerDetail/bannerDetail",
+    "pages/login/login",
+    "pages/authorization/authorization",
+    "pages/chooseCountry/chooseCountry",
+    "pages/download/download",
+    "pages/tradingRecord/tradingRecord",
+    "pages/recharge/recharge",
+    "pages/recommendDetail/recommendDetail",
+    "pages/recommentList/recommentList",
+    "pages/activeDetail/activeDetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "币泡泡",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f3f3f3",
+    "backgroundTextStyle": "dark"
+  },
+  "usingComponents": {
+    "bp-loading": "components/bp-loading/bp-loading",
+    "bp-empty": "components/bp-empty/bp-empty"
+  },
+  "sitemapLocation": "sitemap.json"
+}

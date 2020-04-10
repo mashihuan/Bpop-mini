@@ -1,0 +1,86 @@
+.recomment-item {
+  margin-bottom: 25rpx;
+}
+.recomment-item .recomment-time {
+  margin-bottom: 10rpx;
+}
+.recomment-item .recomment-content {
+  position: relative;
+  padding: 24rpx 20rpx 20rpx 34rpx;
+  border-radius: 16rpx;
+  background: #F7F9FF;
+  overflow: hidden;
+}
+.recomment-item .recomment-content .finished {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34rpx;
+  height: 34rpx;
+}
+.recomment-item .recomment-content .title {
+  width: 80%;
+  font-size: 28rpx;
+  line-height: 1;
+  color: #22285C;
+}
+.recomment-item .recomment-content .sweet {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 6rpx;
+}
+.recomment-item .recomment-content .price {
+  padding: 4rpx 10rpx;
+  border-radius: 6rpx;
+  border: 2rpx solid #FFA911;
+  font-size: 20rpx;
+}
+.recomment-item .content-center, .recomment-item .content-bottom {
+  margin-top: 30rpx;
+}
+.recomment-item .content-center .center-left {
+  width: 35%;
+  padding-left: 30rpx;
+}
+.recomment-item .content-center .lock-wrap {
+  position: relative;
+  width: 56rpx;
+  height: 70rpx;
+}
+.recomment-item .content-center .lock-wrap .name {
+  font-size: 32rpx;
+  color: #22285C;
+  align-self: center;
+}
+.recomment-item .content-center .lock-icon {
+  width: 56rpx;
+  height: 70rpx;
+}
+.recomment-item .content-center .guarantee-icon {
+  position: absolute;
+  bottom: 0;
+  right: -12rpx;
+  width: 24rpx;
+  height: 26rpx;
+}
+.recomment-item .content-center .rate-wrap {
+  margin-bottom: 10rpx;
+}
+.recomment-item .content-center .rate-wrap .rate {
+  font-size: 40rpx;
+}
+.recomment-item .content-center .arrow-icon {
+  width: 40rpx;
+  height: 20rpx;
+}
+.content-bottom > view {
+  font-size: 20rpx;
+}
+.content-bottom .bourse-item {
+  margin-right: 10rpx;
+}
+.content-bottom .bourse-icon, .content-bottom .guarantee-icon, .content-bottom .guarantee-money-icon {
+  width: 24rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}

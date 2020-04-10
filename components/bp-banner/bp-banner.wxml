@@ -1,0 +1,13 @@
+<swiper indicator-dots autoplay indicator-color="#ffffff66" indicator-active-color="#fff"
+  style="height: 300rpx"  wx:if="{{hasBanner}}" class="swiper-wrap"
+>
+  <block wx:for="{{list}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.pic}}" class="slide-image" bindtap="onOpenBannerDetail" 
+        data-id="{{item.id}}" data-link="{{item.link}}" 
+        data-linkType="{{item.linktype}}"
+        data-list="{{list}}" data-pic="{{item.pic}}"
+      />
+    </swiper-item>
+  </block>
+</swiper>

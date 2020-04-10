@@ -1,0 +1,11 @@
+<view class="container text-center bg-white h-100">
+  <image src="/images/logo.png" class="logo rounded-circle"/>
+  <view class="title font-big font-bold">币泡泡</view>
+  <view class="desc font-small">申请获取你的公开信息（昵称、头像）</view>
+  <button class="btn button cu-btn" 
+    open-type="getUserInfo" 
+    loading="{{showBtnLoading}}"
+    disabled="{{showBtnLoading}}"
+    bindgetuserinfo="onGetUserInfoEvent"
+  >微信授权</button>
+</view>

@@ -1,0 +1,48 @@
+.detail-bg {
+  height: 470rpx;
+  background: #FFA000;
+}
+.detail-bg .detail-bg-top {
+  padding: 30rpx 40rpx 0 40rpx;
+}
+.detail-bg .detail-bg-top .name-wrap {
+  margin-left: 20rpx;
+}
+.detail-bg .detail-bg-top .name, .detail-bg .detail-bg-top .num {
+  color: #fff;
+}
+.detail-bg .detail-bg-top .name {
+  font-size: 32rpx;
+  margin-bottom: 8rpx;
+}
+.detail-bg .detail-bg-top .num text {
+  font-size: 28rpx;
+}
+.detail-bg-bottom {
+  margin: 30rpx 20rpx 0rpx 20rpx;
+  padding: 20rpx 40rpx;
+  border-radius: 24rpx;
+  background: #fff;
+}
+.detail-bg-bottom .rate text, .detail-bg-bottom .rate text {
+  font-size: 36rpx;
+}
+.detail-bg-bottom .desc {
+  margin-bottom: 10rpx;
+}
+.detail-bg-bottom .w-50 {
+  position: relative;
+  padding-left: 20rpx;
+}
+.detail-bg-bottom .fail, .detail-bg-bottom .earn {
+  margin-bottom: 48rpx;
+}
+.detail-bg-bottom .fail {
+  border-left: 4rpx solid #F3C2CD;
+}
+.detail-bg-bottom .earn {
+  border-left: 4rpx solid #BAD4FF;
+}
+.detail-bg-bottom .expect {
+  border-left: 4rpx solid #BAD4FF;
+}

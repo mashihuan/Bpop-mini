@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "bp-banner": "/components/bp-banner/bp-banner",
+    "bp-tab-control": "/components/bp-tab-control/bp-tab-control",
+    "bp-active-item": "/components/bp-active-item/bp-active-item"
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 150
+}

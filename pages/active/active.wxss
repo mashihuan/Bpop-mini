@@ -1,0 +1,52 @@
+page {
+  background: #fff;
+}
+.edit-btn {
+  position: fixed;
+  right: 0;
+  bottom: 120rpx;
+  bottom: calc(env(safe-area-inset-bottom) + 120rpx);
+  border-radius: 0;
+  border-top-left-radius: 50rpx;
+  border-bottom-left-radius: 50rpx;
+  box-shadow: 0 1px 3px #ff8615;
+  color: #fff;
+  z-index: 1;
+}
+.edit-btn .iconfont {
+  margin-right: 10rpx;
+}
+.active-item-wrap {
+  padding: 0 20rpx;
+}
+.loadMore {
+  line-height: 70rpx;
+}
+.emptyImg {
+  width: 100%;
+}
+.tab-control.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.cu-load {
+  line-height: 42px;
+}
+.backToTop {
+  position: fixed;
+  bottom: 20rpx;
+  /* bottom: env(safe-area-inset-bottom); */
+  right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 3;
+}
+/* skeleton样式() */
+.skeleton {
+  color: #f3f3f3 !important;
+  background: #f3f3f3 !important;
+}
+
